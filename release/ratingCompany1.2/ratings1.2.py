@@ -14,10 +14,10 @@ options.add_experimental_option("detach", True) # 브라우저 꺼짐 방지 코
 # 크롬 드라이버 최신 버전 설정
 service = ChromeService(executable_path=ChromeDriverManager().install())
 # chrome driver
-browser = webdriver.Chrome(service=service, options=options) # <- options로 변경
+browser = webdriver.Chrome(service=service, options=options)
 time.sleep(2) #위 페이지가 모두 열릴 때까지 2초 대기
 
-wb = load_workbook('company1.1.xlsx')
+wb = load_workbook('./result/company1.2.xlsx')
 ws = wb.active
 rowIndex = 2
 keywords = []
@@ -34,14 +34,7 @@ for keyword in keywords:
       ws.cell(row = rowIndex, column = 2, value=ratings.text)
     else:
       ws.cell(row = rowIndex, column = 2, value="0.0")
-      # print("keyword:",keyword.replace('(주)',''))
-      # print("name:",name.text.replace('(주)',''))
   except:
     ws.cell(row = rowIndex, column = 2, value="0.0")
   rowIndex = rowIndex + 1
-wb.save("company1.1.xlsx")
-# wb.close()
-# browser.quit()
-
-
-# 별점 한줄로 표시 (O)
+wb.save("./result/company1.2.xlsx")
