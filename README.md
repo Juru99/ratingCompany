@@ -5,6 +5,11 @@
 ## 실행 순서
 
 1. import되어 있는 코드들에 해당하는 패키지를 모두 설치. (pip install 패키지명)
+
+   - pip install beautifulsoup4 : 스크래핑을 위한 패키지
+   - pip install lxml : 구문 분석 파서하는 패키지
+   - pip install openpyxl : 엑셀 사용하는 패키지
+
 2. 사람인에 직업별 기준 원하는 키워드를 넣어서 검색.
 3. 검색 결과에서 개수 단위를 100개로 설정 후, 3번째 페이지 url을 company버전.py 파일의 URLS.append(f'여기') 여기에 넣고 검색 결과의 총 페이지 개수를 PAGE_COUNT에 입력하기.
 4. company버전.py 실행 -> 엑셀 파일 생성되는 것 확인
