@@ -12,10 +12,10 @@ for index in range(1,PAGE_COUNT + 1,1):
   # 『 URLS.append(f'여기') 』 여기에 url 입력. 『 job-category?page=요기& 』 요기에 {index} 입력
   URLS.append(f'https://www.saramin.co.kr/zf_user/jobs/list/job-category?page={index}&cat_kewd=236%2C277%2C235&loc_mcd=101000%2C108000&loc_cd=102150%2C102160%2C102140%2C102170&exp_cd=1&exp_none=y&edu_min=6&edu_max=10&edu_none=y&search_optional_item=y&search_done=y&panel_count=y&preview=y&sort=RD&page_count=100&isAjaxRequest=0&type=job-category&is_param=1&isSearchResultEmpty=1&isSectionHome=0&searchParamCount=8&tab=job-category#searchTitle')
 
-if os.path.isfile("./result/company2.0(2023-07-26).xlsx") == False:
+if os.path.isfile("./result/company2.0(2023-07-29).xlsx") == False:
   wb = Workbook()
 else:
-  wb = load_workbook("./result/company2.0(2023-07-26).xlsx")
+  wb = load_workbook("./result/company2.0(2023-07-29).xlsx")
 ws = wb.active
 ws.title = "기업 별점 시트(" + str(today) + ")"
 ws["A1"] = "기업"
@@ -35,4 +35,4 @@ for url in URLS:
         value = company.get_text().strip()
         ws.cell(row=row_index, column=1, value=value)
         row_index = row_index + 1
-wb.save("./result/company2.0(2023-07-26).xlsx")
+wb.save("./result/company2.0(2023-07-29).xlsx")

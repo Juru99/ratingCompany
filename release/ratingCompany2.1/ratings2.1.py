@@ -2,7 +2,7 @@ import requests
 from openpyxl import load_workbook
 from bs4 import BeautifulSoup
 
-wb = load_workbook('./result/company2.0(2023-07-29).xlsx')
+wb = load_workbook('./result/company2.1(2023-07-29).xlsx')
 ws = wb.active
 rowIndex = 2
 keywords = []
@@ -31,4 +31,4 @@ for keyword in keywords:
     ws.cell(row=rowIndex, column=2, value="0.0")
     ws.cell(row=rowIndex, column=3, value=f'{len(companyCards)}개')
   rowIndex = rowIndex + 1
-wb.save("./result/company2.0(2023-07-29).xlsx")
+wb.save("./result/company2.1(2023-07-29).xlsx")
